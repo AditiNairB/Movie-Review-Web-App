@@ -1,27 +1,10 @@
-# GoLang-WebServer
+# README - MOVIEW REVIEW WEB APP
+# -------------------------------
 
-# Install dependencies
+By using the Review Web App, users can view a list of movies and their
+reviews. Users can create their own accounts and login into their accounts.
 
-`go mod tidy`
-
-`go get github.com/gin-gonic/gin`
-
-`go get go.mongodb.org/mongo-driver/mongo`
-
-`go get github.com/gin-contrib/cors`
-
-`go get golang.org/x/crypto/bcrypt`
-
-`go mod download golang.org/x/sys`
-
-
-## Request Flow on API
-
-Request ==> app.go ==> apiRouter.go ==> \<matchingRouter>.go ==> \<matchingController>.go ==> \<matchingModel>.go ==> Response
-
-## To use live-reload during devlopment using nodemon(npm),
-
-Run the following command from repo's root directory
-
-`nodemon --watch './**/*.go' --signal SIGTERM --exec 'go' run app.go`# Movie-Review-Web-App
-# Movie-Review-Web-App
+Apart from viewing reviews posted by others, they can create their own
+reviews and edit them later if needed. Users can either select movies from
+the movie list or search for the movies they want. The movies show the image,
+title, description, rating and reviews.
