@@ -1,0 +1,78 @@
+<body>
+  <div class="container">
+    <!-- <div class="movie-banner-cover">
+    <img src="../../assets/movie-1.png" alt="movie cover">
+  </div> -->
+    <div class="center" style="width: 800px; margin: 0 auto">
+      <div class="card" style="width: 50rem">
+        <div class="movie-cover">
+          <img
+            src="{{ movieDetails.img }}"
+            alt="movie poster"
+            width="35%"
+            height="25%"
+          />
+        </div>
+        <div class="card-title">
+          <h1>{{ movieDetails.name }}</h1>
+          <div class="short-info">
+            <div class="card-subtitle mb-2 text-muted">
+              <span
+                >Average Movie Rating:
+                <strong>{{ averageReview }}</strong></span
+              >
+            </div>
+          </div>
+          <p class="card-text">
+            {{ movieDetails.description }}
+          </p>
+        </div>
+      </div>
+
+      <div class="card" style="width: 50rem">
+        <div *ngIf="showAddReview" class="form-group row">
+          <label for="review" class="col-sm-2 col-form-label">Review</label>
+          <ngb-rating
+            [max]="10"
+            [(rate)]="currentRate"
+            [readonly]="false"
+          ></ngb-rating>
+          <div>
+            <div class="col-sm-10">
+              <textarea
+                name="review"
+                id="review"
+                rows="5"
+                [(ngModel)]="msg"
+              ></textarea>
+              <button
+                (click)="onSubmit()"
+                type="submit"
+                class="btn btn-primary"
+              >
+                Submit review
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Movie Comments-->
+      <div class="card text-left" style="width: 50rem">
+        <div class="card-header">Other User Comments</div>
+        <ul>
+          <section>
+            <li *ngFor="let review of reviews">
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{ review.firstName }} {{ review.lastName }} rated the movie
+                  {{ review.rating }}
+                </h5>
+                <p class="card-text">{{ review.description }}</p>
+              </div>
+            </li>
+          </section>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>

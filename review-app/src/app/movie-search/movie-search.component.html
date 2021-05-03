@@ -1,0 +1,50 @@
+<body>
+  <nav>
+    <a class="logo" href="/">
+      <img src="../../assets/logo.png" />
+    </a>
+    <ul class="menu">
+      <li><a href="/movie-list">Movies</a></li>
+      <li><a href="#">TV Shows</a></li>
+    </ul>
+    <div class="search">
+      <i class="icon-search"></i>
+      <input
+        type="text"
+        placeholder="Search for your movie"
+        name="searchbtn"
+        id="searchText"
+      />
+      <button
+        type="submit"
+        id="submitbtn"
+        (click)="submitOnClick()"
+        [routerLink]="['/movie-search']"
+      >
+        Submit
+      </button>
+    </div>
+  </nav>
+  <section id="main">
+    <h1 class="showcase-heading">Search Movie</h1>
+  </section>
+  <!-- Movie LIST-->
+  <div>
+    <ul>
+      <section id="movie-list">
+        <li *ngFor="let movie of movie">
+          <a [routerLink]="['/movie', movie._id]">
+            <div class="movie-box" id="movie-box">
+              <!-- Movie image-->
+              <div class="movie-img">
+                <img id="image1" src="{{ movie.img }}" />
+              </div>
+              <!-- Movie desc -->
+              <a class="movie-name" href="/movie-list"> {{ movie.name }} </a>
+            </div>
+          </a>
+        </li>
+      </section>
+    </ul>
+  </div>
+</body>

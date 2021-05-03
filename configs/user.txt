@@ -1,0 +1,15 @@
+// Add the below schema to users.
+
+{
+  $jsonSchema: {
+  	required:             ["email", "firstName", "lastName", "password"],
+    properties: {
+      email: {
+        uniqueItems: true,
+      }
+    }
+  }
+}
+
+// Create an index on email to avoid duplicate accounts.
+
